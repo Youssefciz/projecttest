@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+  }
+  
+  .layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: #1d3bbd;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .brand {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .section h4 {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+  }
+  
+  .section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .section li {
+    padding: 8px 0;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+  }
+
+  .section li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section li a:hover {
+    color: #cbd5f0;
+  }
+  
+  .location-box {
+    background-color: #1c339c;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: fit-content;
+  }
+  
+  .location-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  
+  .change-link {
+    color: #76a9ff;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+  }
+  
+  .user .avatar {
+    background-color: #4266f5;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-new {
+    background-color: #2962ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    margin: 20px 0;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .report-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .report-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .report-card h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .report-card p {
+    font-size: 13px;
+    margin: 6px 0;
+  }
+  
+  .risk-bar {
+    margin-top: 10px;
+  }
+  
+  .risk-bar span {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  
+  .bar {
+    background: #e0e0e0;
+    border-radius: 4px;
+    height: 6px;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  
+  .fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+  
+  .red .fill { background: #e53935; }
+  .yellow .fill { background: #fbc02d; }
+  .green .fill { background: #43a047; }
+  
+  .risk-label {
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  .meta {
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+  }
+  

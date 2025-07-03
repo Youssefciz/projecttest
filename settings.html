@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings - Scanergy</title>
+  <link rel="stylesheet" href="css/settings.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <i class="fas fa-lock"></i>
+          <span>Scanergy</span>
+        </div>
+
+        <div class="section">
+          <h4>LOCATION</h4>
+          <div class="location-box">
+            <div class="location-top">
+              <i class="fas fa-map-marker-alt"></i>
+              <span id="selected-location">Loading...</span>
+            </div>
+            <a href="locations.html" class="change-link">
+              <i class="fas fa-sync-alt"></i> Change Location
+            </a>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>MENU</h4>
+          <ul class="menu">
+            <li><a href="reports.html"><i class="fas fa-chart-line"></i> Scan Reports</a></li>
+            <li class="active"><i class="fas fa-cog"></i> Settings</li>
+            <li><a href="help.html"><i class="fas fa-question-circle"></i> Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="avatar">Y</div>
+        <div class="user-info">
+          <strong>Ysadek</strong>
+          <span>Security Admin</span>
+          <a class="logout" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="navigation">
+        <a href="reports.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+      </div>
+
+      <header class="page-header">
+        <h1>Settings</h1>
+        <p>Configure your security dashboard preferences</p>
+      </header>
+
+      <div class="settings-grid">
+        <!-- Scan Configuration -->
+        <div class="settings-card">
+          <div class="card-header">
+            <i class="fas fa-radar-scan"></i>
+            <h3>Scan Configuration</h3>
+          </div>
+          <div class="card-content">
+            <div class="setting-group">
+              <label>Default Scan Type</label>
+              <select class="setting-input">
+                <option>Quick Scan</option>
+                <option selected>Comprehensive</option>
+                <option>Deep Scan</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>Scan Frequency</label>
+              <select class="setting-input">
+                <option>Daily</option>
+                <option selected>Weekly</option>
+                <option>Monthly</option>
+                <option>Manual</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>Auto-scan New Hosts</label>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alert Settings -->
+        <div class="settings-card">
+          <div class="card-header">
+            <i class="fas fa-bell"></i>
+            <h3>Alert Settings</h3>
+          </div>
+          <div class="card-content">
+            <div class="setting-group">
+              <label>Critical Vulnerability Alerts</label>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-group">
+              <label>High Risk Threshold</label>
+              <input type="number" class="setting-input" value="5" min="1" max="20">
+              <small>Alert when high-risk vulnerabilities exceed this count</small>
+            </div>
+            <div class="setting-group">
+              <label>Email Notifications</label>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-group">
+              <label>Notification Email</label>
+              <input type="email" class="setting-input" value="security@company.com">
+            </div>
+          </div>
+        </div>
+
+        <!-- Display Preferences -->
+        <div class="settings-card">
+          <div class="card-header">
+            <i class="fas fa-palette"></i>
+            <h3>Display Preferences</h3>
+          </div>
+          <div class="card-content">
+            <div class="setting-group">
+              <label>Theme</label>
+              <select class="setting-input">
+                <option selected>Light</option>
+                <option>Dark</option>
+                <option>Auto</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>Reports per Page</label>
+              <select class="setting-input">
+                <option>10</option>
+                <option selected>20</option>
+                <option>50</option>
+                <option>100</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>Show Risk Percentages</label>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-group">
+              <label>Auto-refresh Dashboard</label>
+              <select class="setting-input">
+                <option>Never</option>
+                <option>5 minutes</option>
+                <option selected>15 minutes</option>
+                <option>30 minutes</option>
+                <option>1 hour</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security Settings -->
+        <div class="settings-card">
+          <div class="card-header">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Security Settings</h3>
+          </div>
+          <div class="card-content">
+            <div class="setting-group">
+              <label>Session Timeout</label>
+              <select class="setting-input">
+                <option>15 minutes</option>
+                <option>30 minutes</option>
+                <option selected>1 hour</option>
+                <option>4 hours</option>
+                <option>8 hours</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>Two-Factor Authentication</label>
+              <label class="toggle">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-group">
+              <label>Login Attempt Limit</label>
+              <input type="number" class="setting-input" value="3" min="1" max="10">
+            </div>
+            <div class="setting-group">
+              <label>Password Expiry (days)</label>
+              <input type="number" class="setting-input" value="90" min="30" max="365">
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Management -->
+        <div class="settings-card">
+          <div class="card-header">
+            <i class="fas fa-database"></i>
+            <h3>Data Management</h3>
+          </div>
+          <div class="card-content">
+            <div class="setting-group">
+              <label>Data Retention Period</label>
+              <select class="setting-input">
+                <option>30 days</option>
+                <option>90 days</option>
+                <option selected>1 year</option>
+                <option>2 years</option>
+                <option>Indefinite</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>Export Format</label>
+              <select class="setting-input">
+                <option selected>CSV</option>
+                <option>JSON</option>
+                <option>XML</option>
+                <option>PDF</option>
+              </select>
+            </div>
+            <div class="setting-group">
+              <label>Auto-backup Reports</label>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-group">
+              <label>Backup Location</label>
+              <input type="text" class="setting-input" value="/backup/scanergy/" readonly>
+              <button class="browse-btn">Browse</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Integration Settings -->
+        <div class="settings-card">
+          <div class="card-header">
+            <i class="fas fa-plug"></i>
+            <h3>Integrations</h3>
+          </div>
+          <div class="card-content">
+            <div class="setting-group">
+              <label>SIEM Integration</label>
+              <label class="toggle">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-group">
+              <label>Slack Notifications</label>
+              <label class="toggle">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-group">
+              <label>Webhook URL</label>
+              <input type="url" class="setting-input" placeholder="https://hooks.slack.com/...">
+            </div>
+            <div class="setting-group">
+              <label>API Rate Limit (req/min)</label>
+              <input type="number" class="setting-input" value="100" min="10" max="1000">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button class="btn-save">
+          <i class="fas fa-save"></i> Save Settings
+        </button>
+        <button class="btn-reset">
+          <i class="fas fa-undo"></i> Reset to Defaults
+        </button>
+        <button class="btn-export">
+          <i class="fas fa-download"></i> Export Configuration
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/settings.js"></script>
+</body>
+</html> 

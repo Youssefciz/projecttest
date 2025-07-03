@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scan Reports</title>
+  <link rel="stylesheet" href="css/reports.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .layout {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #183bbb;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+      padding: 20px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      padding: 0 20px;
+      margin-bottom: 30px;
+      gap: 10px;
+    }
+
+    .section {
+      padding: 0 20px;
+    }
+
+    .section h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #cbd5f0;
+    }
+
+    .location-box {
+      background-color: #1c339c;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: fit-content;
+    }
+
+    .location-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .change-link {
+      color: #76a9ff;
+      font-size: 0.8rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .menu li {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      gap: 10px;
+      color: white;
+    }
+
+    .user {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 20px;
+      padding: 15px 20px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      background-color: #3e56d0;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .user-info {
+      font-size: 0.85rem;
+    }
+
+    .user-info strong {
+      display: block;
+    }
+
+    .logout {
+      font-size: 0.8rem;
+      color: white;
+      margin-top: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+    }
+
+    .content {
+      flex: 1;
+      background-color: #f4f6f9;
+      padding: 30px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-new {
+      background-color: #275efe;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .search-bar input {
+      margin: 20px 0;
+      padding: 10px;
+      width: 280px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .reports-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .report-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      width: 300px;
+    }
+
+    .risk-bar {
+      margin: 10px 0;
+    }
+
+    .risk-bar span {
+      font-size: 0.85rem;
+    }
+
+    .bar {
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 5px 0;
+    }
+
+    .fill {
+      height: 100%;
+    }
+
+    .red { background-color: red; }
+    .yellow { background-color: gold; }
+    .green { background-color: limegreen; }
+
+    .meta {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <i class="fas fa-lock"></i>
+          <span>Scanergy</span>
+        </div>
+
+        <div class="section">
+          <h4>LOCATION</h4>
+          <div class="location-box">
+            <div class="location-top">
+              <i class="fas fa-map-marker-alt"></i>
+              <span id="selected-location">Loading...</span>
+            </div>
+            <a href="locations.html" class="change-link">
+              <i class="fas fa-sync-alt"></i> Change Location
+            </a>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>MENU</h4>
+          <ul class="menu">
+            <li><i class="fas fa-chart-line"></i> Scan Reports</li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="help.html"><i class="fas fa-question-circle"></i> Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="avatar">Y</div>
+        <div class="user-info">
+          <strong>Ysadek</strong>
+          <span>Security Admin</span>
+          <a class="logout" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header>
+        <h2>Network Scan Reports</h2>
+        <button class="btn-new">+ New Scan</button>
+      </header>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search reports..." />
+      </div>
+
+      <div class="reports-grid" id="reports-container">
+        <!-- JS will inject cards here -->
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      const location = params.get("location") || "New York";
+      document.getElementById("selected-location").textContent = location;
+
+      const reportsByLocation = {
+        "New York": [
+          { id: "SCAN-001", risk: "Medium", level: 60, date: "May 15, 2023 – 09:45 AM", hosts: 189 },
+          { id: "SCAN-002", risk: "High", level: 90, date: "May 14, 2023 – 02:30 PM", hosts: 127 },
+          { id: "SCAN-007", risk: "Low", level: 25, date: "May 13, 2023 – 06:15 PM", hosts: 203 },
+          { id: "SCAN-012", risk: "Critical", level: 95, date: "May 12, 2023 – 11:30 AM", hosts: 156 },
+          { id: "SCAN-018", risk: "Medium", level: 55, date: "May 10, 2023 – 03:20 PM", hosts: 234 }
+        ],
+        "Los Angeles": [
+          { id: "SCAN-003", risk: "Low", level: 30, date: "May 13, 2023 – 11:15 AM", hosts: 142 },
+          { id: "SCAN-008", risk: "Medium", level: 65, date: "May 11, 2023 – 02:45 PM", hosts: 198 },
+          { id: "SCAN-013", risk: "High", level: 80, date: "May 09, 2023 – 09:30 AM", hosts: 167 },
+          { id: "SCAN-019", risk: "Low", level: 20, date: "May 08, 2023 – 04:15 PM", hosts: 213 }
+        ],
+        "Hong Kong": [
+          { id: "SCAN-004", risk: "Low", level: 20, date: "May 12, 2023 – 03:20 PM", hosts: 178 },
+          { id: "SCAN-009", risk: "High", level: 85, date: "May 11, 2023 – 08:45 AM", hosts: 145 },
+          { id: "SCAN-014", risk: "Medium", level: 50, date: "May 10, 2023 – 01:30 PM", hosts: 221 },
+          { id: "SCAN-020", risk: "Critical", level: 92, date: "May 08, 2023 – 10:20 AM", hosts: 134 },
+          { id: "SCAN-025", risk: "Low", level: 35, date: "May 07, 2023 – 05:15 PM", hosts: 187 }
+        ],
+        "Paris": [
+          { id: "SCAN-005", risk: "Medium", level: 50, date: "May 10, 2023 – 10:00 AM", hosts: 162 },
+          { id: "SCAN-010", risk: "Low", level: 15, date: "May 09, 2023 – 07:30 AM", hosts: 241 },
+          { id: "SCAN-015", risk: "High", level: 75, date: "May 08, 2023 – 12:45 PM", hosts: 119 },
+          { id: "SCAN-021", risk: "Medium", level: 60, date: "May 07, 2023 – 02:15 PM", hosts: 195 },
+          { id: "SCAN-026", risk: "Critical", level: 88, date: "May 06, 2023 – 09:40 AM", hosts: 208 }
+        ]
+      };
+
+      const colors = {
+        Critical: "red",
+        High: "red",
+        Medium: "yellow", 
+        Low: "green"
+      };
+
+      const container = document.getElementById("reports-container");
+      const reports = reportsByLocation[location] || [];
+
+      if (reports.length === 0) {
+        container.innerHTML = `<p>No reports available for ${location}.</p>`;
+      } else {
+        reports.forEach(report => {
+          const card = document.createElement("div");
+          card.className = `report-card`;
+          card.style.cursor = "pointer";
+          card.innerHTML = `
+            <h3>Full Network Scan</h3>
+            <p>Scan ID: ${report.id}</p>
+            <div class="risk-bar">
+              <span>Vulnerabilities</span>
+              <div class="bar">
+                <div class="fill ${colors[report.risk]}" style="width: ${report.level}%"></div>
+              </div>
+              <span class="risk-label">${report.risk} Risk</span>
+            </div>
+            <div class="meta">
+              <span>${report.date}</span>
+              <span>${report.hosts} hosts</span>
+            </div>
+          `;
+          
+          // Add click handler to navigate to detail page
+          card.addEventListener('click', function() {
+            window.location.href = `report-detail.html?scan=${report.id}&location=${encodeURIComponent(location)}`;
+          });
+          
+          container.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

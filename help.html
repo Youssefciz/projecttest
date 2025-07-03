@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help & Support - Scanergy</title>
+  <link rel="stylesheet" href="css/help.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <i class="fas fa-lock"></i>
+          <span>Scanergy</span>
+        </div>
+
+        <div class="section">
+          <h4>LOCATION</h4>
+          <div class="location-box">
+            <div class="location-top">
+              <i class="fas fa-map-marker-alt"></i>
+              <span id="selected-location">Loading...</span>
+            </div>
+            <a href="locations.html" class="change-link">
+              <i class="fas fa-sync-alt"></i> Change Location
+            </a>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>MENU</h4>
+          <ul class="menu">
+            <li><a href="reports.html"><i class="fas fa-chart-line"></i> Scan Reports</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li class="active"><i class="fas fa-question-circle"></i> Help</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="avatar">Y</div>
+        <div class="user-info">
+          <strong>Ysadek</strong>
+          <span>Security Admin</span>
+          <a class="logout" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="navigation">
+        <a href="reports.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+      </div>
+
+      <header class="page-header">
+        <h1>Help & Support</h1>
+        <p>Find answers and get assistance with Scanergy</p>
+      </header>
+
+      <div class="help-content">
+        <div class="quick-start">
+          <h2>Quick Start Guide</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Select Location</h4>
+                <p>Choose your monitoring location to view scan reports</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Review Reports</h4>
+                <p>Browse scan reports and their risk levels</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Analyze Details</h4>
+                <p>Click reports for detailed vulnerability analysis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="help-sections">
+          <div class="help-card">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Understanding Reports</h3>
+            <p>Learn how to interpret vulnerability data and risk levels</p>
+          </div>
+          
+          <div class="help-card">
+            <i class="fas fa-cog"></i>
+            <h3>Configuration</h3>
+            <p>Set up scan schedules, alerts, and preferences</p>
+          </div>
+          
+          <div class="help-card">
+            <i class="fas fa-question-circle"></i>
+            <h3>FAQ</h3>
+            <p>Common questions and troubleshooting tips</p>
+          </div>
+          
+          <div class="help-card">
+            <i class="fas fa-phone"></i>
+            <h3>Contact Support</h3>
+            <p>Get help from our technical support team</p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <h2>Need More Help?</h2>
+          <div class="support-options">
+            <div class="support-item">
+              <i class="fas fa-envelope"></i>
+              <span>Email: support@scanergy.com</span>
+            </div>
+            <div class="support-item">
+              <i class="fas fa-phone"></i>
+              <span>Phone: +1 (800) SCANERGY</span>
+            </div>
+            <div class="support-item">
+              <i class="fas fa-clock"></i>
+              <span>Hours: 24/7 Support Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/help.js"></script>
+</body>
+</html> 

@@ -1,0 +1,543 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f9;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 240px;
+  background-color: #183bbb;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.section {
+  padding: 0 20px;
+}
+
+.section h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #cbd5f0;
+}
+
+.location-box {
+  background-color: #1c339c;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: fit-content;
+}
+
+.location-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.change-link {
+  color: #76a9ff;
+  font-size: 0.8rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.menu li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  gap: 10px;
+  color: white;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu li a:hover {
+  color: #cbd5f0;
+}
+
+.user {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
+  padding: 15px 20px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  background-color: #3e56d0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.user-info {
+  font-size: 0.85rem;
+}
+
+.user-info strong {
+  display: block;
+}
+
+.logout {
+  font-size: 0.8rem;
+  color: white;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  background-color: #f4f6f9;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Navigation */
+.navigation {
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  color: #2962ff;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* Report Header */
+.report-header {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.title-section h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.scan-id {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.risk-badge {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.high-risk {
+  background-color: #ef5350;
+  color: white;
+}
+
+.medium-risk {
+  background-color: #ffa726;
+  color: white;
+}
+
+.low-risk {
+  background-color: #66bb6a;
+  color: white;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metadata-item .label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.metadata-item .value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Chart Section */
+.chart-section {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.chart-container {
+  height: 300px;
+  position: relative;
+}
+
+/* Two Column Layout */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* Section Cards */
+.section-card {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-card h3 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Hosts Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.hosts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.hosts-table th {
+  background-color: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.hosts-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-critical {
+  background-color: #ef5350;
+  color: white;
+}
+
+.status-high {
+  background-color: #ffa726;
+  color: white;
+}
+
+.status-medium {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+.status-low {
+  background-color: #66bb6a;
+  color: white;
+}
+
+/* Network Changes */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.comparing-text {
+  font-size: 12px;
+  color: #666;
+  margin: 5px 0 0 0;
+}
+
+.comparison-dropdown {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  background: white;
+}
+
+.network-changes-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.new-hosts h4,
+.missing-hosts h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.host-item {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.host-item.missing {
+  background-color: #ffeaea;
+  border-left: 4px solid #ef5350;
+}
+
+.host-name {
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+}
+
+.host-ip {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0;
+}
+
+.host-info {
+  font-size: 11px;
+  color: #999;
+}
+
+.action-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.action-link {
+  color: #2962ff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+}
+
+/* Vulnerabilities Section */
+.vulnerabilities-section {
+  grid-column: 1 / -1;
+}
+
+.vulnerability-item {
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 15px;
+  background: #fafbfc;
+}
+
+.vuln-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.vuln-title {
+  flex: 1;
+}
+
+.cve-link {
+  color: #2962ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cve-link:hover {
+  text-decoration: underline;
+}
+
+.vuln-name {
+  font-size: 13px;
+  color: #333;
+  margin: 4px 0;
+}
+
+.affected-hosts {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.affected-hosts strong {
+  color: #333;
+}
+
+.vuln-description {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.vuln-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.cvss-tag {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.auth-tag {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.remote-tag {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .metadata-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .metadata-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+} 

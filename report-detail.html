@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scan Report Details</title>
+  <link rel="stylesheet" href="css/report-detail.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <i class="fas fa-lock"></i>
+          <span>Scanergy</span>
+        </div>
+
+        <div class="section">
+          <h4>LOCATION</h4>
+          <div class="location-box">
+            <div class="location-top">
+              <i class="fas fa-map-marker-alt"></i>
+              <span id="selected-location">Loading...</span>
+            </div>
+            <a href="locations.html" class="change-link">
+              <i class="fas fa-sync-alt"></i> Change Location
+            </a>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>MENU</h4>
+          <ul class="menu">
+            <li><a href="reports.html"><i class="fas fa-chart-line"></i> Scan Reports</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="help.html"><i class="fas fa-question-circle"></i> Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="user">
+        <div class="avatar">Y</div>
+        <div class="user-info">
+          <strong>Ysadek</strong>
+          <span>Security Admin</span>
+          <a class="logout" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <!-- Navigation -->
+      <div class="navigation">
+        <a href="reports.html" class="back-btn" id="back-link">
+          <i class="fas fa-arrow-left"></i> Back to Reports
+        </a>
+      </div>
+
+      <!-- Header Section -->
+      <div class="report-header">
+        <div class="header-content">
+          <div class="title-section">
+            <h1>Full Network Scan</h1>
+            <p class="scan-id">Scan ID: <span id="scan-id">SCAN-XXX</span></p>
+          </div>
+          <div class="risk-badge">
+            <span id="risk-level" class="badge high-risk">High Risk</span>
+          </div>
+        </div>
+        
+        <div class="metadata-grid">
+          <div class="metadata-item">
+            <span class="label">Scan Date</span>
+            <span class="value" id="scan-date">May 14, 2023 – 02:30 PM</span>
+          </div>
+          <div class="metadata-item">
+            <span class="label">Scan Duration</span>
+            <span class="value" id="scan-duration">1h 23m</span>
+          </div>
+          <div class="metadata-item">
+            <span class="label">Scan Type</span>
+            <span class="value" id="scan-type">Comprehensive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vulnerability Summary Chart -->
+      <div class="chart-section">
+        <h3>Vulnerabilities</h3>
+        <div class="chart-container">
+          <canvas id="vulnerabilityChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="two-column">
+        <!-- Hosts Scanned Table -->
+        <div class="hosts-section">
+          <div class="section-card">
+            <h3>Hosts Scanned (<span id="host-count">127</span>)</h3>
+            <div class="table-container">
+              <table class="hosts-table">
+                <thead>
+                  <tr>
+                    <th>Hostname</th>
+                    <th>IP Address</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="hosts-table-body">
+                  <!-- Will be populated by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Network Changes -->
+        <div class="network-changes-section">
+          <div class="section-card">
+            <div class="section-header">
+              <div>
+                <h3>Network Changes</h3>
+                <p class="comparing-text">Comparing with: <span id="comparison-date">May 10, 2023 scan</span></p>
+              </div>
+              <select class="comparison-dropdown">
+                <option>Last scan (May 10, 2023)</option>
+                <option>Previous week</option>
+                <option>Previous month</option>
+              </select>
+            </div>
+
+            <div class="network-changes-content">
+              <div class="new-hosts">
+                <h4>New Hosts Detected (<span id="new-hosts-count">3</span>)</h4>
+                <div id="new-hosts-list">
+                  <!-- Will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <div class="missing-hosts">
+                <h4>Missing Hosts (<span id="missing-hosts-count">1</span>)</h4>
+                <div id="missing-hosts-list">
+                  <!-- Will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <div class="action-links">
+                <a href="#" class="action-link">Export List</a>
+                <a href="#" class="action-link">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detected Vulnerabilities -->
+      <div class="vulnerabilities-section">
+        <div class="section-card">
+          <h3>Detected Vulnerabilities</h3>
+          <div id="vulnerabilities-list">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/report-detail.js"></script>
+</body>
+</html> 
